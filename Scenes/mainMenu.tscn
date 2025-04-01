@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2vm6v5nmj2tq"]
+
+[ext_resource type="Script" uid="uid://d145w1wn7l1qr" path="res://Scenes/main_menu.gd" id="1_5pknu"]
+[ext_resource type="Texture2D" uid="uid://dubdeu7ipdv4i" path="res://Assets/conceptArt/daughters room.png" id="2_b7htb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yl13b"]
+texture = ExtResource("2_b7htb")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3uny1"]
+bg_color = Color(0.835294, 0.780392, 0.117647, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5pknu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_yl13b")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 1301.0
+offset_right = 766.0
+offset_bottom = 1438.0
+theme_override_font_sizes/font_size = 100
+text = "Your Daughter"
+
+[node name="Label" type="Label" parent="Panel/Label"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 130.0
+offset_right = 369.0
+offset_bottom = 185.0
+theme_override_font_sizes/font_size = 40
+text = "By MelDidntListen"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 674.0
+offset_right = 606.0
+offset_bottom = 975.0
+theme_override_constants/separation = 35
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3uny1")
+text = "Say Hello!"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3uny1")
+text = "Options"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_3uny1")
+text = "Say bye"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_optionsMenu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exitGame_pressed"]
