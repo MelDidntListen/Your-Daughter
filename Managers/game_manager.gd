@@ -1,5 +1,5 @@
 extends Node
-class_name Gameplay extends Node2D
+class_name Gameplay
 
 ## Sample game manager scene. In v1.0 of SceneManager, it kept track of the current scene for you, 
 ## because it was always simply replacing everything every time. In v1.1, we've decoupled the game
@@ -9,24 +9,26 @@ class_name Gameplay extends Node2D
 ## achieve desired ordering (rather than passing all this into the SceneManager which would make those
 ## load calls long, bulky, and still restrited to whatever features I chose to include.  
 
-@onready var level_holder: Node2D = $LevelHolder
+@onready var activity_holder: Node2D = $ActivityHolder
 @onready var hud: Control = $HUD
+@onready var SceneManager: Label = $Managers/SceneManager
 
-var current_level:Level
+
+var current_activity:Activity
 
 func _ready() -> void:
 	
-	SceneManager.load_complete.connect(_on_level_loaded)
+	SceneManager.load_complete.connect(_on_activity_loaded)
 	SceneManager.load_start.connect(_on_load_start)
-	SceneManager.scene_added.connect(_on_level_added)
-	current_level = level_holder.get_child(0) as Level
+	SceneManager.scene_added.connect(_on_activity_added)
+	current_activity = activity_holder.get_child(0) as Activity
 
-func _on_level_loaded(level) -> void:
-	if level is Level:
-		current_level = level
+func _on_activity_loaded(activity) -> void:
+	if activity is Activity:
+		current_activity = activity
 
 # shows how we can use this signal to make sure the loading screen stays on top
-func _on_level_added(_level,_loading_screen) -> void:
+func _on_activity_added(_activity,_loading_screen) -> void:
 	pass
 	# keep loading screen on top
 	if _loading_screen != null:
@@ -41,3 +43,6 @@ func _on_load_start(_loading_screen):
 	# keep HUD on top of loading screen - uncomment below to keep HUD up top (see above)
 #	_loading_screen.reparent(self)
 #	move_child(_loading_screen,hud.get_index())
+
+func player_click():
+	pass

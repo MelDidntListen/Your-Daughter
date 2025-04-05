@@ -1,0 +1,159 @@
+[gd_scene load_steps=5 format=3 uid="uid://q0a5kwjqwdey"]
+
+[ext_resource type="Script" uid="uid://bu1w7vmx7facw" path="res://Managers/game_manager.gd" id="1_fj581"]
+[ext_resource type="Script" uid="uid://tdn4kt02helc" path="res://scripts/DebugMenu.gd" id="2_f0koi"]
+[ext_resource type="Script" uid="uid://1le7erqkwc4t" path="res://scripts/activity.gd" id="2_rgtfi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfxfj"]
+
+[node name="TheGame" type="Node"]
+script = ExtResource("1_fj581")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("2_f0koi")
+
+[node name="DebugTrigger" type="Button" parent="HUD"]
+layout_mode = 0
+offset_left = -136.0
+offset_top = 12.0
+offset_right = 33.0
+offset_bottom = 85.0
+text = "Debug
+"
+
+[node name="Debug" type="HBoxContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -964.0
+offset_bottom = 445.0
+grow_horizontal = 0
+theme_override_constants/separation = 30
+alignment = 2
+
+[node name="Age2" type="VBoxContainer" parent="HUD/Debug"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="HUD/Debug/Age2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Age"
+
+[node name="Button" type="Button" parent="HUD/Debug/Age2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Baby"
+
+[node name="Button2" type="Button" parent="HUD/Debug/Age2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Toddler"
+
+[node name="Button3" type="Button" parent="HUD/Debug/Age2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Child"
+
+[node name="Button4" type="Button" parent="HUD/Debug/Age2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Pre-Teen"
+
+[node name="Button5" type="Button" parent="HUD/Debug/Age2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Teen"
+
+[node name="Button6" type="Button" parent="HUD/Debug/Age2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Adult"
+
+[node name="Activity" type="VBoxContainer" parent="HUD/Debug"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="HUD/Debug/Activity"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "Activity"
+
+[node name="Birthday" type="Button" parent="HUD/Debug/Activity"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Birthday
+"
+
+[node name="Button2" type="Button" parent="HUD/Debug/Activity"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Dressup
+"
+
+[node name="Button3" type="Button" parent="HUD/Debug/Activity"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Colour"
+
+[node name="Button4" type="Button" parent="HUD/Debug/Activity"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Shapes"
+
+[node name="Button5" type="Button" parent="HUD/Debug/Activity"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Bedtime"
+
+[node name="Button6" type="Button" parent="HUD/Debug/Activity"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_yfxfj")
+text = "Calendar"
+
+[node name="CloseDebug" type="Button" parent="HUD/Debug"]
+layout_mode = 2
+text = "Close
+Debug"
+
+[node name="ActivityHolder" type="Node2D" parent="."]
+
+[node name="activity" type="Node2D" parent="ActivityHolder"]
+script = ExtResource("2_rgtfi")
+
+[connection signal="pressed" from="HUD/DebugTrigger" to="HUD" method="_on_debug_trigger_pressed"]
+[connection signal="pressed" from="HUD/Debug/CloseDebug" to="HUD" method="_on_close_debug_pressed"]

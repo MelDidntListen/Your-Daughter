@@ -4,7 +4,7 @@ extends Control
 
 func _on_start_pressed() -> void:
 	print("Start pressed")
-	get_tree().change_scene_to_file("res://Scenes/Activities/NiceToMeetYou.tscn")
+	get_tree().change_scene_to_file("res://Scenes/TheGame.tscn")
 
 
 func _on_optionsMenu_pressed() -> void:
