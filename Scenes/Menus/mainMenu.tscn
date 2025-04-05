@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d2vm6v5nmj2tq"]
 
-[ext_resource type="Script" uid="uid://d145w1wn7l1qr" path="res://Scenes/main_menu.gd" id="1_5pknu"]
+[ext_resource type="Script" uid="uid://d145w1wn7l1qr" path="res://Scenes/Menus/main_menu.gd" id="1_5pknu"]
 [ext_resource type="Texture2D" uid="uid://dubdeu7ipdv4i" path="res://Assets/conceptArt/daughters room.png" id="2_b7htb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yl13b"]

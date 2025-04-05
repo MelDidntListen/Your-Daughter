@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b7n42khvfk1g8"]
+
+[node name="ChildScene" type="Node2D"]
