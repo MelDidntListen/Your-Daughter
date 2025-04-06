@@ -1,3 +1,77 @@
-[gd_scene format=3 uid="uid://bidpj7i8nq67j"]
+[gd_scene load_steps=10 format=3 uid="uid://bidpj7i8nq67j"]
+
+[ext_resource type="Texture2D" uid="uid://cckpkax6ud2d7" path="res://Assets/2d_assets/calendar_standin.png" id="1_lsa7l"]
+[ext_resource type="Script" uid="uid://c4mh60bjm43fe" path="res://Scenes/Activities/Calandar/calandar.gd" id="1_oowdq"]
+[ext_resource type="PackedScene" uid="uid://2nlp6m7slp42" path="res://Assets/particles/calendar_pages.tscn" id="3_op0kv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ie04"]
+size = Vector3(120, 60, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oowdq"]
+albedo_color = Color(0.955509, 0.832271, 0.500162, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_op0kv"]
+material = SubResource("StandardMaterial3D_oowdq")
+size = Vector3(120, 60, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dti2g"]
+albedo_texture = ExtResource("1_lsa7l")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_7l08y"]
+material = SubResource("StandardMaterial3D_dti2g")
+size = Vector2(10, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgrmp"]
+size = Vector2(1473.72, 1494.57)
 
 [node name="Calandar" type="Node3D"]
+script = ExtResource("1_oowdq")
+
+[node name="BackWall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, -67)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackWall"]
+shape = SubResource("BoxShape3D_1ie04")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BackWall/CollisionShape3D"]
+mesh = SubResource("BoxMesh_op0kv")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32.6084, -63.6344)
+mesh = SubResource("QuadMesh_7l08y")
+skeleton = NodePath("../..")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(2048, 1536)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279116, 32.5165, -51.6015)
+
+[node name="CalendarPages" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_op0kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.394, -65.5)
+
+[node name="Interactibles" type="Node" parent="SubViewportContainer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/Interactibles"]
+position = Vector2(1002, 761.5)
+scale = Vector2(0.583558, 0.588803)
+texture = ExtResource("1_lsa7l")
+
+[node name="Area2D" type="Area2D" parent="SubViewportContainer/Interactibles/Sprite2D"]
+position = Vector2(1057.58, 319.496)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/Interactibles/Sprite2D/Area2D"]
+position = Vector2(-1057.59, -318.654)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_hgrmp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.3889, 20.6271)

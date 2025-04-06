@@ -26,6 +26,6 @@ func _on_animation_finished(anim_name):
 	elif anim_name == "guilt_fadeIn":
 		color_rect.visible = false
 		color_rect2.visible = false
-		get_tree().change_scene_to_file("res://Scenes/Menus/mainMenu.tscn")
+		SceneManager.swap_scenes("res://Scenes/Menus/mainMenu.tscn")
 
 #Ends text animation and brings to main menu
