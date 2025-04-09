@@ -4,8 +4,6 @@ extends Panel
 @onready var color_rect2 = $ColorRect2
 @onready var animation_player = $ColorRect/AnimationPlayer
 @onready var animation_player2 = $ColorRect2/AnimationPlayer2
-@onready var version_num: Label = %VersionNum
-@onready var SceneManager: Label = $Managers/SceneManager
 
 func _ready():
 	# Turns on intro text animation
@@ -16,8 +14,6 @@ func _ready():
 	animation_player2.animation_finished.connect(_on_animation_finished)
 	# $Timer.start()
 	# ^ commented out as no timer is needed
-	version_num.text = "v%s" % SceneManager.VERSION
-	print(">>> You are working with SceneManager+ version: v%s" % SceneManager.VERSION)
 	
 func _on_animation_finished(anim_name):
 	if anim_name == "oneSitting_fadeIn":
@@ -26,6 +22,6 @@ func _on_animation_finished(anim_name):
 	elif anim_name == "guilt_fadeIn":
 		color_rect.visible = false
 		color_rect2.visible = false
-		SceneManager.swap_scenes("res://Scenes/Menus/mainMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Menus/mainMenu.tscn")
 
 #Ends text animation and brings to main menu

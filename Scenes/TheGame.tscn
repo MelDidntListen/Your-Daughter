@@ -1,31 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://q0a5kwjqwdey"]
+[gd_scene load_steps=5 format=3 uid="uid://q0a5kwjqwdey"]
 
-[ext_resource type="Script" uid="uid://bu1w7vmx7facw" path="res://Managers/game_manager.gd" id="1_fj581"]
-[ext_resource type="Script" uid="uid://tdn4kt02helc" path="res://scripts/DebugMenu.gd" id="2_f0koi"]
+[ext_resource type="PackedScene" uid="uid://0drmgvb3pa2w" path="res://Managers/hud.tscn" id="1_rgtfi"]
+[ext_resource type="PackedScene" uid="uid://bpv4byepkuj7x" path="res://Managers/activity_holder.tscn" id="2_f0koi"]
 [ext_resource type="PackedScene" uid="uid://d06lawnpfnfv8" path="res://Scenes/Menus/startScene.tscn" id="4_f0koi"]
-[ext_resource type="Script" uid="uid://cqq3mg7kkwq5o" path="res://Managers/SceneManager.gd" id="4_yfxfj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yfxfj"]
 
-[node name="TheGame" type="Node"]
-script = ExtResource("1_fj581")
+[node name="TheGame" type="Node2D"]
 
 [node name="SceneManager" type="Label" parent="."]
 unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 23.0
-script = ExtResource("4_yfxfj")
 
-[node name="HUD" type="Control" parent="."]
+[node name="HUD" parent="." instance=ExtResource("1_rgtfi")]
 unique_name_in_owner = true
-layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-script = ExtResource("2_f0koi")
 
 [node name="DebugTrigger" type="Button" parent="HUD"]
 layout_mode = 0
@@ -37,6 +26,7 @@ text = "Debug
 "
 
 [node name="Debug" type="HBoxContainer" parent="HUD"]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -158,10 +148,7 @@ layout_mode = 2
 text = "Close
 Debug"
 
-[node name="ActivityHolder" type="Node2D" parent="."]
+[node name="ActivityHolder" parent="." instance=ExtResource("2_f0koi")]
 unique_name_in_owner = true
 
-[node name="Panel" parent="ActivityHolder" instance=ExtResource("4_f0koi")]
-
-[connection signal="pressed" from="HUD/DebugTrigger" to="HUD" method="_on_debug_trigger_pressed"]
-[connection signal="pressed" from="HUD/Debug/CloseDebug" to="HUD" method="_on_close_debug_pressed"]
+[node name="Panel2" parent="ActivityHolder" instance=ExtResource("4_f0koi")]

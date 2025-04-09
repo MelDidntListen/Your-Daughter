@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="Your Daughter"
-run/main_scene="uid://q0a5kwjqwdey"
+run/main_scene="uid://d06lawnpfnfv8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
@@ -20,7 +21,7 @@ config/icon="res://icon.svg"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 GameManager="*res://Managers/game_manager.gd"
-SceneManager="*res://Managers/SceneManager.gd"
+SceneManager="res://Managers/SceneManager.gd"
 DebugMenu="*res://scripts/DebugMenu.gd"
 ActivityRunner="*res://scripts/activityRunner.gd"
 

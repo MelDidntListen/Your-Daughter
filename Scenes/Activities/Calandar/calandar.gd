@@ -5,7 +5,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
-		$SubViewportContainer/SubViewport/CalendarPages.emitting = true
+		$SubViewportContainer/SubViewport/CPUParticles3D.emitting = true
 
 func pass_days():
 	if GameManager.getAge() == [0] || GameManager.getAge() == [1] || GameManager.getAge() == [2]:

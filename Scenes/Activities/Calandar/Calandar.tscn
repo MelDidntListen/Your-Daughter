@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cckpkax6ud2d7" path="res://Assets/2d_assets/calendar_standin.png" id="1_lsa7l"]
 [ext_resource type="Script" uid="uid://c4mh60bjm43fe" path="res://Scenes/Activities/Calandar/calandar.gd" id="1_oowdq"]
-[ext_resource type="PackedScene" uid="uid://2nlp6m7slp42" path="res://Assets/particles/calendar_pages.tscn" id="3_op0kv"]
+[ext_resource type="PackedScene" uid="uid://b35g5whst0nvy" path="res://Scenes/Activities/Calandar/cpu_particles_3d.tscn" id="3_oowdq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ie04"]
 size = Vector3(120, 60, 3)
@@ -55,8 +55,9 @@ render_target_update_mode = 4
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279116, 32.5165, -51.6015)
 
-[node name="CalendarPages" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_op0kv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 34.394, -65.5)
+[node name="CPUParticles3D" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_oowdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.8958, -61.5096)
+emitting = true
 
 [node name="Interactibles" type="Node" parent="SubViewportContainer"]
 
@@ -70,7 +71,6 @@ position = Vector2(1057.58, 319.496)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/Interactibles/Sprite2D/Area2D"]
 position = Vector2(-1057.59, -318.654)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hgrmp")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
