@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl233nsvkapkk"
-path="res://.godot/imported/cursor_active.svg-95b8ca01cb60806f05374dab04acc350.ctex"
+uid="uid://bnydcq8yota8d"
+path="res://.godot/imported/cursor_off.png-d752fc992eca0f04579ce79ec2473f46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/2d_assets/cursor_active.svg"
-dest_files=["res://.godot/imported/cursor_active.svg-95b8ca01cb60806f05374dab04acc350.ctex"]
+source_file="res://Assets/2d_assets/cursors/cursor_off.png"
+dest_files=["res://.godot/imported/cursor_off.png-d752fc992eca0f04579ce79ec2473f46.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

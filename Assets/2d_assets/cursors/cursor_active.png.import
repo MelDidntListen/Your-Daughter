@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vusjlfxtnmlw"
-path="res://.godot/imported/cursor_standin.png-1a873a36ad8205e8d63083c486ca0083.ctex"
+uid="uid://ccwosyqynpyyw"
+path="res://.godot/imported/cursor_active.png-b42f0f26589b489bf30f1ddec129bbb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/2d_assets/cursor_standin.png"
-dest_files=["res://.godot/imported/cursor_standin.png-1a873a36ad8205e8d63083c486ca0083.ctex"]
+source_file="res://Assets/2d_assets/cursors/cursor_active.png"
+dest_files=["res://.godot/imported/cursor_active.png-b42f0f26589b489bf30f1ddec129bbb9.ctex"]
 
 [params]
 
