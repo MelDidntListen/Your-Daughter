@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b35g5whst0nvy"]
+
+[ext_resource type="Texture2D" uid="uid://hkuyuxhaqg16" path="res://Assets/2d_assets/calendar_page.png" id="1_fk7uk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl0d7"]
+albedo_texture = ExtResource("1_fk7uk")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kwuno"]
+material = SubResource("StandardMaterial3D_cl0d7")
+
+[node name="CPUParticles3D" type="CPUParticles3D"]
+emitting = false
+lifetime = 2.0
+mesh = SubResource("QuadMesh_kwuno")
+gravity = Vector3(-1, -0.2, 0.1)

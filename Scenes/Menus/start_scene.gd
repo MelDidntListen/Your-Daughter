@@ -6,12 +6,14 @@ extends Panel
 @onready var animation_player2 = $ColorRect2/AnimationPlayer2
 
 func _ready():
+	# Turns on intro text animation
 	color_rect.visible = true
 	animation_player.play("oneSitting_fadeIn")
 	color_rect2.visible = false
 	animation_player.animation_finished.connect(_on_animation_finished)
 	animation_player2.animation_finished.connect(_on_animation_finished)
 	# $Timer.start()
+	# ^ commented out as no timer is needed
 	
 func _on_animation_finished(anim_name):
 	if anim_name == "oneSitting_fadeIn":
@@ -20,4 +22,6 @@ func _on_animation_finished(anim_name):
 	elif anim_name == "guilt_fadeIn":
 		color_rect.visible = false
 		color_rect2.visible = false
-		get_tree().change_scene_to_file("res://Scenes/mainMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Menus/mainMenu.tscn")
+
+#Ends text animation and brings to main menu

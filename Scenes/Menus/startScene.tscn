@@ -1,25 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://d06lawnpfnfv8"]
 
-[ext_resource type="Script" uid="uid://kd8w8s7f21vk" path="res://Scenes/start_scene.gd" id="1_dlh0t"]
+[ext_resource type="Script" uid="uid://kd8w8s7f21vk" path="res://Scenes/Menus/start_scene.gd" id="1_dlh0t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsgrl"]
 bg_color = Color(0.495386, 0.46798, 0.706178, 1)
-
-[sub_resource type="Animation" id="Animation_ypcqp"]
-resource_name = "oneSitting_fadeIn"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 4, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_hesrg"]
 length = 0.001
@@ -55,6 +39,22 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("../../ColorRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ypcqp"]
+resource_name = "oneSitting_fadeIn"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {

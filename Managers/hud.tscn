@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://0drmgvb3pa2w"]
+
+[ext_resource type="Script" uid="uid://tdn4kt02helc" path="res://scripts/DebugMenu.gd" id="1_u1q2g"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("1_u1q2g")

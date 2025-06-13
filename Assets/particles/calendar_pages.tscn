@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://2nlp6m7slp42"]
+
+[ext_resource type="PackedScene" uid="uid://b35g5whst0nvy" path="res://Scenes/Activities/Calandar/cpu_particles_3d.tscn" id="1_3h857"]
+
+[node name="CalendarPages" type="Node3D"]
+
+[node name="CPUParticles3D" parent="." instance=ExtResource("1_3h857")]
